@@ -44,7 +44,7 @@ class RecordRTCEngine extends RecordEngine {
         if (this.recorderType !== undefined) {
             this.mediaType.video = this.recorderType;
         }
-        
+
         // setup RecordRTC
         this.engine = new RecordRTC.MRecordRTC();
         this.engine.mediaType = this.mediaType;
@@ -61,8 +61,7 @@ class RecordRTCEngine extends RecordEngine {
         this.engine.canvas = this.canvas;
         this.engine.bitrate = this.bitRate;
 
-        if (this.mimeType?.video?.includes("mp4")) {
-            console.debug("Setting videoBitsPerSecond to 1 Mbps")
+        if (this.mimeType.video.includes("mp4")) {
             this.engine.videoBitsPerSecond = 1000000; // 1 Mbps
         }
 

@@ -152,5 +152,8 @@
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/collab"
+  },
+  "publishConfig": {
+    "@kira:registry": "https://npm.pkg.github.com"
   }
 }

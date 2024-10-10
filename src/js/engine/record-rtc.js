@@ -61,6 +61,16 @@ class RecordRTCEngine extends RecordEngine {
         this.engine.canvas = this.canvas;
         this.engine.bitrate = this.bitRate;
 
+        /**
+         * Passed in from nectar. Originally this was only used with the 'webm-wasm' plugin. We do not use that plugin,
+         * so we are repurposing the option/value to pass to RecordRTC, which will in turn send it to the browser's
+         * MediaRecorderAPI object. Currently only used when recording mp4 videos
+         */
+        let videoBitsPerSecond = this.videoBitRate;
+        if (videoBitsPerSecond) {
+            this.engine.videoBitsPerSecond = videoBitsPerSecond;
+        }
+
         // animated gif settings
         this.engine.quality = this.quality;
         this.engine.frameRate = this.frameRate;

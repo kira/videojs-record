@@ -38,19 +38,19 @@ class FFmpegWasmEngine extends ConvertEngine {
          *
          * @type {string}
          */
-        this.coreURL = '/node_modules/@ffmpeg/core-mt/dist/umd/ffmpeg-core.js';
+        this.coreURL = options.plugins.record.coreURL || '/node_modules/@ffmpeg/core-mt/dist/umd/ffmpeg-core.js';
         /**
          * Path to script `ffmpeg-core.worker.js`.
          *
          * @type {string}
          */
-        this.convertWorkerURL = '/node_modules/@ffmpeg/core-mt/dist/umd/ffmpeg-core.worker.js';
+        this.convertWorkerURL = options.plugins.record.convertWorkerURL || '/node_modules/@ffmpeg/core-mt/dist/umd/ffmpeg-core.worker.js';
         /**
          * Path to script `ffmpeg-core.wasm`.
          *
          * @type {string}
          */
-        this.audioWebAssemblyURL = '/node_modules/@ffmpeg/core-mt/dist/umd/ffmpeg-core.wasm';
+        this.audioWebAssemblyURL = options.plugins.record.audioWebAssemblyURL || '/node_modules/@ffmpeg/core-mt/dist/umd/ffmpeg-core.wasm';
         /**
          * Mime-type for output.
          *

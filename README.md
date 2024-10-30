@@ -1,5 +1,57 @@
 # videojs-record
 
+# Kira specific information -- PLEASE keep up to date
+
+### Changes made
+
+This is a fork of the `videojs-record` library where we needed to make a couple of changes
+
+- Allow the library to take in and pass along the video bitrate to record in
+  - Allows us to use whatever bitrate we want to better control video sizes generated
+  - Uses the Kira version of [RecordRTC](https://github.com/kira/RecordRTC) (see `package.json`)
+  - See
+    - [CORE-1839](https://kiratalent.atlassian.net/browse/CORE-1839)
+    - [Diff](https://github.com/kira/videojs-record/pull/2)
+- Allow us to pass in custom file locations for the ffmpeg-wasm library files
+  - Allows us to more easily serve the files from the same domain
+  - See
+    - [CORE-1836](https://kiratalent.atlassian.net/browse/CORE-1836)
+    - [Diff](https://github.com/kira/videojs-record/pull/3)
+
+### Making Changes
+
+- Clone the repository
+- Node 20 is required to run the project
+  - `nvm install 20 && nvm use 20`
+- Install the dependencies
+  - `npm ci`
+
+### Testing the changes in Nectar
+- Make your changes
+- Run the build
+  - `npm run build`
+- Copy and overwrite all the files from the `dist` folder to `<nectar_home>/node_modules/@kira/videojs-record/dist/`
+- Restart the React dev server
+
+### Cutting a new release
+
+- Merge your pull request
+- From your local machine, run the following on a new branch created from `main`
+```shell
+$ npm version patch
+$ git push 
+$ git push --tags
+```
+- Create a new PR with the changes
+- Merge your PR
+- Run the `Build and Publish Package` Github action
+- Update the releases page on Github
+- You can now reference the release number created in other projects with `@kira/videojs-record` and the version number
+  - ex: `yarn add \@kira/videojs-record@4.8.2`
+
+
+# Original README
+
 A [video.js](https://www.videojs.com/) plugin for recording audio/video/image files.
 
 ![Screenshot](https://raw.githubusercontent.com/collab-project/videojs-record/master/docs/img/screenshot.png?raw=true "Screenshot")

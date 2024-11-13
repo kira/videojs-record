@@ -1386,7 +1386,7 @@ class Record extends Plugin {
 
         // Clean up any resources the converter engine may have used
         if (this.converter) {
-            this.converter.dispose()
+            this.converter.dispose();
         }
 
         // stop recording and device

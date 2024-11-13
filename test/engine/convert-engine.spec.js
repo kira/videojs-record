@@ -65,10 +65,10 @@ describe('engine.convert-engine', () => {
 
     it('should call dispose when the player is disposed', (done) => {
         let engine = new ConvertEngine(player, {});
-        spyOn(engine, 'dispose')
+        spyOn(engine, 'dispose');
 
-        player.dispose()
+        player.dispose();
 
         expect(engine.dispose).toHaveBeenCalled();
-    })
+    });
 });

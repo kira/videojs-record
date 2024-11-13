@@ -12,6 +12,9 @@ This is a fork of the `videojs-record` library where we needed to make a couple 
   - See
     - [CORE-1839](https://kiratalent.atlassian.net/browse/CORE-1839)
     - [Diff](https://github.com/kira/videojs-record/pull/2)
+- Cleanup the FFMPEG WASM workers once the video player is destroyed to avoid a memory leak 
+  - See
+    - [Diff](https://github.com/kira/videojs-record/pull/7)
 - Allow us to pass in custom file locations for the ffmpeg-wasm library files
   - Allows us to more easily serve the files from the same domain
   - See

@@ -1,6 +1,6 @@
 {
   "name": "@kira/videojs-record",
-  "version": "4.8.2",
+  "version": "4.8.3",
   "description": "A video.js plugin for recording audio/video/image files.",
   "author": "Collab",
   "license": "MIT",
